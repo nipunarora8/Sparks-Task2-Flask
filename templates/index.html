@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <title>Marks Prediction</title>
+
+    <style>
+
+        img{
+            margin-top: 10px;
+            
+        }
+
+        body{
+            background-image:url("{{url_for('static',filename='bg.png')}}");
+        }
+        .img_submit{
+            height: 20px;;
+        }
+
+
+@media (max-width: 452px) { 
+        
+         .form-group1{
+            width: 80%;
+            left: 11%;   
+            position: absolute; 
+            text-align: center;
+            top: 6%; 
+            
+         }
+    
+        .form-group2{
+            /* width: 130%; */
+            left: 11%;   
+            position: absolute; 
+            text-align: center;
+            top: 87%;
+        }
+        
+        .container-fluid {
+            position: relative;
+            text-align: center;
+            display: inline-block;
+            color: white;
+        } 
+} 
+
+
+@media (min-width: 454px) { 
+        
+        .form-group1{
+           width: 60%;
+           left: 21%;   
+           position: absolute; 
+           text-align: center;
+           top: 62%; 
+           
+        }
+       .form-group2{
+           width: 60%;
+           left: 21%;   
+           position: absolute; 
+           text-align: center;
+           top: 76%;}
+       
+       .container-fluid {
+           position: relative;
+           text-align: center;
+           display: inline-block;
+           color: white;
+       } 
+} 
+        
+    </style>
+</head>
+<body>
+
+        <div class="row container-fluid">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <img src="{{url_for('static',filename='image.png')}}" height="725" width ='350'>
+            <form action="{{ url_for('predict') }}" method="POST" name="marks">
+                <div class="form-group1">
+                    <input class="form-control" type="text" name="hours" placeholder="Hours of study">
+                </div>
+                <div class="form-group2">
+                    <input type="image" id="img_submit" src="{{url_for('static',filename='PREDICT.png')}}" width=30% height=20% name="Submit"  alt="">
+                </div>
+            </form>
+
+
+
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    
+</body>
+</html>
